@@ -1,0 +1,24 @@
+filebeat.inputs:
+- type: filestream
+  enabled: true
+  id: python-logs
+  paths:
+    - /home/tinhinane/security_logs.json
+  json.keys_under_root: true
+  json.add_error_key: true
+  json.overwrite_keys: true
+  processors:
+    - decode_json_fields:
+        fields: ["message"]
+        target: ""
+        overwrite_keys: true  
+output.elasticsearch:
+ hosts: ["http://localhost:9200"]
+ username: "elastic"
+ password: "A4jiazExJOQH6_GYOTgD"           
+ ssl.verification_mode: none 
+ index: "my_custom_index-%{+yyyy.MM.dd}"
+
+setup.template.name: "my_custom_index"
+setup.template.pattern: "my_custom_index-*"
+
