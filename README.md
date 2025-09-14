@@ -21,18 +21,6 @@ This project demonstrates how to build a **basic SIEM (Security Information and 
 
 ---
 
-## Setup Instructions  
-
-### 1- Prerequisites  
-- Install **Elasticsearch**, **Kibana**, and **Filebeat**  
-- Python 3.x  
-
-### 2️- Run the Log Generator  
-```bash
-python logs_generator/security_log_generator.py
-
-# SIEM Project with ELK Stack
-
 ## 📊 Kibana Dashboards & Visualizations
 
 The project includes pre-built Kibana dashboards for real-time security monitoring:
