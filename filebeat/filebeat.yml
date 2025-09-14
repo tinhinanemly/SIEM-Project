@@ -14,8 +14,8 @@ filebeat.inputs:
         overwrite_keys: true  
 output.elasticsearch:
  hosts: ["http://localhost:9200"]
- username: "elastic"
- password: "A4jiazExJOQH6_GYOTgD"           
+ username: <ELASTIC_USERNAME>
+ password: <ELASTIC_PASSWORD>          
  ssl.verification_mode: none 
  index: "my_custom_index-%{+yyyy.MM.dd}"
 
