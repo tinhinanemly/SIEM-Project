@@ -21,7 +21,7 @@ This project demonstrates how to build a **basic SIEM (Security Information and 
 
 ---
 
-## 📊 Kibana Dashboards & Visualizations
+## Kibana Dashboards & Visualizations
 
 The project includes pre-built Kibana dashboards for real-time security monitoring:
 
@@ -36,7 +36,7 @@ The project includes pre-built Kibana dashboards for real-time security monitori
 - **Port Scan Analysis**: Bar chart showing scan activity by source IP
 - **Service Targeting**: Horizontal bar chart of most attacked services
 
-## 🚨 Detection Rules
+## Detection Rules
 
 Custom detection rules created in Kibana for:
 
@@ -45,8 +45,8 @@ Custom detection rules created in Kibana for:
 - **Web Application Attacks**: SQL injection and XSS detection
 - **High Severity Events**: Critical severity level triggers
 - **Malware Detection**: Known malware pattern matching
-
-## 🏗️ Architecture
+  
+  ## Architecture
 
 ```mermaid
 graph LR
@@ -57,6 +57,74 @@ graph LR
     E --> F[Dashboards]
     E --> G[Detection Rules]
     E --> H[Alerts]
+```
+  
+## Installation & Setup
+### 1. Prerequisites
+
+```bash
+# Install ELK stack
+sudo apt-get install elasticsearch kibana filebeat
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Install ELK stack
+sudo apt-get install elasticsearch kibana filebeat
+
+```
+### 2. Configure Filebeat
+```bash
+# Copy custom configuration
+sudo cp filebeat/filebeat.yml /etc/filebeat/
+
+# Setup Elasticsearch templates and Kibana dashboards
+sudo filebeat setup
+```
+### 3. Start Services
+```bash
+sudo systemctl start elasticsearch kibana filebeat
+```
+### 4. Generate Logs
+```bash
+# Continuous log generation
+python logs_generator/security_log_generator.py
+
+# Or batch generation
+python logs_generator/security_log_generator.py --batch 1000
+```
+### 5.Import Dashboards & Rules
+
+In Kibana → Stack Management → Saved Objects → Import
+
+Import the files in /dashboards/
+
+### 6.Visualize & Monitor
+
+Open Kibana → Dashboards → Select Sample Dashboard
+
+Check the alerts and detections panel
+
+### Example Dashboards
+
+Here are some screenshots of the dashboards I built:
+
+### Future Improvements
+
+Add integration with Logstash
+
+More complex detection rules
+
+Automate alerting via email/Slack
+
+### Author
+
+Created by ***Tinhinane Moulai*** – Cybersecurity & Network Security Enthusiast
+
+
+
+
+
 
 
 
