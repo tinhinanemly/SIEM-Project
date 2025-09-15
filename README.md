@@ -105,10 +105,6 @@ Open Kibana → Dashboards → Select Sample Dashboard
 
 Check the alerts and detections panel
 
-### Example Dashboards
-
-Here are some screenshots of the dashboards I built:
-
 ### Future Improvements
 
 Add integration with Logstash
